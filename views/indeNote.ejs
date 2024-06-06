@@ -5,23 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes App</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      #Md h1 {
-        font-size: 2.5rem;
-      }
-      #Md h2 {
-        font-size: 2.1rem;
-      }
-      #Md h3 {
-        font-size: 2.7rem;
-      }
-      #Md h4 {
-        font-size: 1.3rem;
-      }
-      #Md h5 {
-        font-size: 1.1rem;
-      }
-    </style>
   </head>
 
   <body>
@@ -70,14 +53,18 @@
           >
             <%=data.title%>
           </h1>
-          <p id="Md" class="mb-8 leading-relaxed text-left"><%=data.body%></p>
+          <%- include('partials/note') %>
         </div>
       </div>
     </section>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.2/marked.min.js"></script>
   <script>
-    var text = document.getElementById("Md").innerHTML;
-    document.getElementById("Md").innerHTML = marked(text);
+    const htmlInput = document.getElementById("Md").innerHTML;
+    const markdownOutput = marked(htmlInput);
+    document.getElementById("Md").innerText = markdownOutput;
+
+    // var text = document.getElementById("Md").innerHTML;
+    // document.getElementById("Md").innerHTML = marked(text);
   </script>
 </html>
