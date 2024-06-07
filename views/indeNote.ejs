@@ -42,7 +42,24 @@
         </nav>
       </div>
     </header>
-
+    <div class="flex">
+      <form action="/notes/delete/<%=data._id%>" method="post">
+        <button
+          type="submit"
+          class="h-16 w-16 text-xl rounded mx-16 bg-red-400"
+        >
+          🗑️
+        </button>
+      </form>
+      <form action="/notes/edit/<%=data._id%>" method="edit">
+        <button
+          type="submit"
+          class="h-16 w-16 text-xl rounded mx-16 bg-green-400"
+        >
+          🖊
+        </button>
+      </form>
+    </div>
     <section class="text-gray-600 body-font">
       <div
         class="container mx-auto flex px-5 py-2 items-center justify-center flex-col"

@@ -41,7 +41,7 @@
         </nav>
       </div>
     </header>
-    <form action="/notes/createNote" method="post">
+    <form action="/notes/edit/<%=NoteID%>" method="post">
       <section class="text-gray-600 body-font relative">
         <div class="container px-5 py-12 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
@@ -102,5 +102,7 @@
       selector: "#noteBody",
       height: 1000,
     });
+    const QuerySelect = document.querySelector("#tinymce");
+    QuerySelect.innerHTML = `<h1>atharva</h1>`;
   </script>
 </html>
