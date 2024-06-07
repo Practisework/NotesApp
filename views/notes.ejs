@@ -72,7 +72,9 @@
                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
                   <%= val.title%>
                 </h1>
-                <p id="Md" class="leading-relaxed mb-3"><%= val.body%></p>
+                <p id="Md" class="leading-relaxed mb-3">
+                  <%= val.body.slice(0,200)%>....
+                </p>
                 <div class="flex items-center flex-wrap">
                   <a
                     href="/notes/<%=val._id%>"
