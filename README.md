@@ -1,15 +1,23 @@
-# notes-app
 
-To install dependencies:
+# Notes app
+
+A very good and simple app for creating notes.
+
+
+
+## Installation
+
+Install Notes app with bun
 
 ```bash
-bun install
+    git Clone "https://github.com/Practisework/NotesApp.git"
+    bun install
+    cd bun
 ```
+    
+## Tech Stack
 
-To run:
+**Client:** ejs, TailwindCSS
 
-```bash
-bun run index.ts
-```
+**Server:** Node, Express, MongoDB
 
-This project was created using `bun init` in bun v1.1.10. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
