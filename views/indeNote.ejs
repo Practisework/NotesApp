@@ -59,6 +59,12 @@
           🖊
         </button>
       </form>
+
+      <button
+        id="copyButton"
+        class="h-16 w-auto px-4 text-xl rounded mx-16 bg-slate-200"
+        title="Click to copy"
+      ></button>
     </div>
     <section class="text-gray-600 body-font">
       <div
@@ -83,5 +89,22 @@
 
     // var text = document.getElementById("Md").innerHTML;
     // document.getElementById("Md").innerHTML = marked(text);
+  </script>
+  <script>
+    const copyButton = document.getElementById("copyButton");
+    const currentURL = window.location.href; // Get the current page URL
+    copyButton.innerHTML = currentURL;
+    copyButton.addEventListener("click", () => {
+      navigator.clipboard
+        .writeText(currentURL)
+        .then(() => {
+          // Success message (optional)
+          console.log("URL copied to clipboard!");
+        })
+        .catch((err) => {
+          // Error handling (optional)
+          console.error("Failed to copy text: ", err);
+        });
+    });
   </script>
 </html>
