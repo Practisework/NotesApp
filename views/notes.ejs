@@ -35,6 +35,24 @@
             <div
               class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
             >
+              <div class="flex">
+                <form action="/notes/delete/<%=val._id%>" method="post">
+                  <button
+                    type="submit"
+                    class="h-16 w-16 text-xl rounded mx-16 bg-red-400"
+                  >
+                    🗑️
+                  </button>
+                </form>
+                <form action="/notes/edit/<%=val._id%>" method="edit">
+                  <button
+                    type="submit"
+                    class="h-16 w-16 text-xl rounded mx-16 bg-green-400"
+                  >
+                    🖊
+                  </button>
+                </form>
+              </div>
               <div class="p-6 text-pretty w-full">
                 <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
                   <%= val.title%>
