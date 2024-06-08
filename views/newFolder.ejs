@@ -41,14 +41,14 @@
         </nav>
       </div>
     </header>
-    <form action="/notes/createNote" method="post">
+    <form action="/folder/new" method="post">
       <section class="text-gray-600 body-font relative">
         <div class="container px-5 py-12 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
             <h1
               class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
             >
-              Create a note
+              Create a folder
             </h1>
           </div>
           <div class="lg:w-5/6 md:5/6 mx-auto">
@@ -56,41 +56,14 @@
               <div class="p-2 w-full">
                 <div class="relative">
                   <label for="name" class="leading-7 text-sm text-gray-600"
-                    >Enter you notes Title</label
+                    >Enter you folder name</label
                   >
                   <input
                     type="text"
-                    id="title"
-                    name="title"
+                    id="name"
+                    name="name"
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
-                </div>
-              </div>
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="name" class="leading-7 text-sm text-gray-600"
-                    >Enter you folder name (type nothing to do no have a
-                    folder)</label
-                  >
-                  <input
-                    type="text"
-                    id="folder"
-                    name="folder"
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
-                </div>
-              </div>
-
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="message" class="leading-7 text-sm text-gray-600"
-                    >Write Your notes</label
-                  >
-                  <textarea
-                    id="noteBody"
-                    name="noteBody"
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 h-96 duration-200 ease-in-out"
-                  ></textarea>
                 </div>
               </div>
               <div class="p-2 w-full">
@@ -98,7 +71,7 @@
                   type="submit"
                   class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                 >
-                  Create your note
+                  Create your folder
                 </button>
               </div>
             </div>
@@ -107,14 +80,4 @@
       </section>
     </form>
   </body>
-  <script
-    src="https://cdn.tiny.cloud/1/tdszrepavwfrudgrvovqavta1ayrfj60juiyadg5h91oodwd/tinymce/7/tinymce.min.js"
-    referrerpolicy="origin"
-  ></script>
-  <script>
-    tinymce.init({
-      selector: "#noteBody",
-      height: 1000,
-    });
-  </script>
 </html>

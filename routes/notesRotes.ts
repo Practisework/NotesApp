@@ -19,6 +19,7 @@ router.post("/createNote", (req: any, res: any) => {
   const newNote: any = new Note.Note({
     title: req.body.title,
     body: req.body.noteBody,
+    inFolderName: req.body.folder,
   });
   newNote
     .save()
