@@ -15,9 +15,21 @@ router.post("/new", (req: any, res: any) => {
     res.redirect("/");
   });
 });
+router.post("/delete/:id", (req: any, res: any) => {
+  Folder.Folder.findById(req.params.id)
+    .then((folder: any) => {
+      Folder.Folder.deleteOne(folder).then(() => {
+        res.redirect("/");
+      });
+    })
+    .catch((err: any) => {
+      res.send(err);
+    });
+});
 router.get("/:folderId", (req: any, res: any) => {
   Folder.Note.find({ inFolderName: req.params.folderId }).then((data: any) => {
     res.render("InFolder", { data: data });
   });
 });
+
 module.exports = router;

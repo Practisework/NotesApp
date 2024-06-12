@@ -11,13 +11,23 @@
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 flex flex-wrap mx-auto">
         <%folderData.map(val=>{%>
-        <a href="/folder/<%=val.name%>"
-          ><div
-            class="w-52 h-52 bg-slate-700 items-end flex justify-center my-3 mx-3"
+        <div class="flex bg-slate-700">
+          <form action="/folder/delete/<%=val._id%>" method="post">
+            <button
+              type="submit"
+              class="h-16 w-16 text-xl rounded mx-16 bg-red-400"
+            >
+              🗑️
+            </button>
+          </form>
+          <a href="/folder/<%=val.name%>">
+            <div
+              class="w-52 h-52 bg-slate-700 items-end flex justify-center my-3 mx-3"
+            >
+              <h1 class="text-3xl text-white"><%=val.name%></h1>
+            </div></a
           >
-            <h1 class="text-3xl text-white"><%=val.name%></h1>
-          </div></a
-        >
+        </div>
         <%})%>
         <a href="/folder/new">
           <div
