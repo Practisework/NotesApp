@@ -45,7 +45,10 @@ router.post("/delete/:id", (req: any, res: any) => {
 router.get("/edit/:id", (req: any, res: any) => {
   Note.Note.findById(req.params.id)
     .then((note: any) => {
-      res.render("editNotes", { NoteID: note._id, data: note.body });
+      res.render("editNotes", {
+        NoteID: note._id,
+        data: note.body,
+      });
     })
     .catch((err: any) => {
       res.send(err);
@@ -54,8 +57,33 @@ router.get("/edit/:id", (req: any, res: any) => {
 router.post("/edit/:id", (req: any, res: any) => {
   Note.Note.findById(req.params.id)
     .then((note: any) => {
-      Note.Note.updateOne(note, { body: req.body.noteBody }).then(() => {
+      Note.Note.updateOne(note, {
+        body: req.body.noteBody,
+      }).then(() => {
         res.redirect("/notes");
+      });
+    })
+    .catch((err: any) => {
+      res.send(err);
+    });
+});
+router.get("/move/:id", (req: any, res: any) => {
+  Note.Note.findById(req.params.id)
+    .then((note: any) => {
+      res.render("moveNotes", {
+        NoteID: note._id,
+        data: note.body,
+      });
+    })
+    .catch((err: any) => {
+      res.send(err);
+    });
+});
+router.post("/move/:id", (req: any, res: any) => {
+  Note.Note.findById(req.params.id)
+    .then((note: any) => {
+      Note.Note.updateOne(note, { inFolderName: req.body.IFName }).then(() => {
+        res.redirect("/");
       });
     })
     .catch((err: any) => {

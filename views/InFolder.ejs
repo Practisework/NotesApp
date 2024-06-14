@@ -35,7 +35,7 @@
             <div
               class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
             >
-              <div class="flex">
+              <div class="flex flex-wrap">
                 <form action="/notes/delete/<%=val._id%>" method="post">
                   <button
                     type="submit"
@@ -50,6 +50,14 @@
                     class="h-16 w-16 text-xl rounded mx-16 bg-green-400"
                   >
                     🖊
+                  </button>
+                </form>
+                <form action="/notes/move/<%=val._id%>" method="edit">
+                  <button
+                    type="submit"
+                    class="h-16 w-16 text-xl rounded mx-16 bg-green-400"
+                  >
+                    🔗
                   </button>
                 </form>
               </div>

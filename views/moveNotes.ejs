@@ -8,14 +8,14 @@
   </head>
   <body>
     <%- include('partials/navbar')%>
-    <form action="/notes/edit/<%=NoteID%>" method="post">
+    <form action="/notes/move/<%=NoteID%>" method="post">
       <section class="text-gray-600 body-font relative">
         <div class="container px-5 py-12 mx-auto">
           <div class="flex flex-col text-center w-full mb-12">
             <h1
               class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
             >
-              Edit the note
+              move the note
             </h1>
           </div>
 
@@ -24,13 +24,13 @@
               <div class="p-2 w-full">
                 <div class="relative">
                   <label for="message" class="leading-7 text-sm text-gray-600"
-                    >Write Your notes</label
+                    >change the folder</label
                   >
-                  <textarea
-                    id="noteBody"
-                    name="noteBody"
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 h-96 duration-200 ease-in-out"
-                  ></textarea>
+                  <input
+                    id="IFName"
+                    name="IFName"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-10"
+                  />
                 </div>
               </div>
               <div class="p-2 w-full">
